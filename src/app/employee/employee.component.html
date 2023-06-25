@@ -1,0 +1,39 @@
+<h1 [ngClass]="isGreen? 'title-green':'title-red'">{{title}}</h1>
+<h2 *ngIf="employees.length<1">No Data</h2>
+<div style="margin: 20px; float: right">
+    <button class="button" (click)="addEmployees()"> Add Employee</button>
+</div>
+<div style="margin: 20px; float: right">
+    <button class="buttn" (click)="updateEmployees()"> Update Employee</button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Mobile</th>
+            <th>Email id</th>
+            <th>Username</th>
+            <th>Password</th>
+            <th>Address</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="employees.length>0">
+        <tr *ngFor="let employee of employees">
+            <td>{{employee.id}}</td>
+            <td>{{employee.name}}</td>
+            <td>{{employee.mobile}}</td>
+            <td>{{employee.email}}</td>
+            <td>{{employee.username}}</td>
+            <td>{{employee.password}}</td>
+            <td>{{employee.address}}</td>
+            <td>
+                <button (click)="deleteEmployee(employee.id)" style ="color: red;">Delete</button>
+            </td>
+            <!-- <td>
+                <button (click)="updateemployee(employee.id)">Update</button>
+            </td> -->
+        </tr>
+    </tbody>
+</table>

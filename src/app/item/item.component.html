@@ -1,0 +1,32 @@
+<h1 [ngClass]="isGreen? 'title-green':'title-red'">{{title}}</h1>
+<h2 *ngIf="items.length<1">No Data</h2>
+<div style="margin: 20px; float: right">
+    <button class="button" (click)="addItems()"> Add Item</button>
+</div>
+<div style="margin: 20px; float: right">
+    <button class="buttn" (click)="updateItems()"> Update Item</button>
+</div>
+<table>
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Stock</th>
+            <th>Number</th>
+            <th>Type</th>
+            <th>Description</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody *ngIf="items.length>0">
+        <tr *ngFor="let item of items">
+            <td>{{item.id}}</td>
+            <td>{{item.stock}}</td>
+            <td>{{item.number}}</td>
+            <td>{{item.type}}</td>
+            <td>{{item.description}}</td>
+            <td>
+                <button (click)="deleteItem(item.id)">Delete</button>
+            </td>
+        </tr>
+    </tbody>
+</table>

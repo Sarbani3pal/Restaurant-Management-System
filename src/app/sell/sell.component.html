@@ -1,0 +1,32 @@
+
+<h1 [ngClass]="isGreen? 'title-green':'title-red'" >{{title}}</h1>
+
+<h2 *ngIf="sells.length<1">No Data</h2>
+<div style= "margin: 20px; float:right">
+  <button class="button" (click)="addsell()"> Add Sell</button>
+</div>
+<div style= "margin: 20px; float:right">
+  <button class="buttn" (click)="updatesell()"> UpdateSell</button>
+</div>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>name</th>
+      <th>type</th>
+      <th>description</th>
+      <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody *ngIf="sells.length>0">
+    <tr *ngFor="let sell of sells">
+      <td>{{ sell.id}}</td>
+      <td>{{ sell.name }}</td>
+      <td>{{ sell.type}}</td>
+      <td>{{ sell.description }}</td>
+      <td>
+        <button (click)="deleteSell(sell.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

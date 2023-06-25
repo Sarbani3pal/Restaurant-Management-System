@@ -1,0 +1,28 @@
+<div style="padding-left: 100px;">
+    <h1>Add Restaurant</h1>
+    <form [formGroup]="restaurantForms" (ngSubmit)="saverestaurant()">
+        <div>
+            <label for="name">Name:</label>
+            <input type="text" id="name" formControlName="name">
+        </div>
+        <div>
+            <label for="type">Type:</label>
+            <input type="text" id="type" formControlName="type">
+        </div>
+        <div>
+            <label for="description">Description:</label>
+            <input type="text" id="description" formControlName="description">
+        </div>
+        
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" formControlName="address">
+        </div>
+        <div *ngIf="restaurantForms.valid">
+            <input type="submit" value="Save Restaurant">
+        </div>
+    </form>
+</div>
+
+<h4>Form Status: {{restaurantForms.valid}}</h4>
+<h4>Form json: {{restaurantForms.value    |   json}}</h4>

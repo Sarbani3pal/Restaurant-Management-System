@@ -1,0 +1,53 @@
+table {
+    overflow: auto;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  th{
+    text-align: left;
+    padding: 8px;
+    color:blue
+  }
+  td {
+    text-align: left;
+    padding: 8px;
+    color:rgb(10, 6, 10);
+  }
+  
+  tr:nth-child(even){background-color: #f2f2f2}
+  
+  th {
+    background-color: darkslateblue;
+    color: white;
+  }
+
+
+  .button {
+    background-color: #04AA6D; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+  .buttn {
+    background-color: deeppink; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+  }
+
+.title-green{
+color: rgb(83, 228, 253);
+}
+
+.title-red{
+color: red;
+}

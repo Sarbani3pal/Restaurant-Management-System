@@ -1,0 +1,27 @@
+<div style="padding-left: 100px;">
+    <h1>Add Payment</h1>
+    <form [formGroup]="paymentForms" (ngSubmit)="savePayments()">
+        <div>
+            <label for="customerid">Customerid:</label>
+            <input type="text" id="customerid" formControlName="customerid">
+        </div>
+        <div>
+            <label for="date"> Date:</label>
+            <input type="date" id="date" formControlName="date">
+        </div>
+        <div>
+            <label for="amount">Amount:</label>
+            <input type="text" id="amount" formControlName="amount">
+        </div>
+        <div>
+            <label for="decription">Description:</label>
+            <input type="text" id="decription" formControlName="decription">
+        </div>
+        <div *ngIf="paymentForms.valid">
+            <input type="submit" value="Save Payment">
+        </div>
+    </form>
+</div>
+
+<h4>Form Status: {{paymentForms.valid}}</h4>
+<h4>Form json: {{paymentForms.value    |   json}}</h4>
